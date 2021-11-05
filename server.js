@@ -18,6 +18,9 @@ app.use(express.urlencoded({extended: true}));
 const dir = path.join(__dirname, 'frontend');
 app.use(express.static(dir));
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname + "/frontend/public/index.html"))
+})
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
