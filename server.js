@@ -14,7 +14,7 @@ connectDB();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-express.static(path_join(__dirname, './frontend/public'))
+express.static(path_join(__dirname, './frontend/build'))
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
