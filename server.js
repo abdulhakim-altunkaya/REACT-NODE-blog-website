@@ -19,7 +19,7 @@ const dir = path.join(__dirname, 'frontend');
 app.use(express.static(dir));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + "/frontend/public/index.html"))
+  res.sendFile(path.join(__dirname + "/frontend/src/index.js"))
 })
 
 const storage = multer.diskStorage({
