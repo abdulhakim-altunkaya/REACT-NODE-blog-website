@@ -42,7 +42,7 @@ const Socket = () => {
         <input className="socketInput" type="text" id="message" placeholder="Message"/>
         <button className="socketBtn" id="send" onClick={handleSubmit}>Send</button>
       </div>
-      <p>fasdfasdf</p>
+      <p>fasdfasdfdfdfdf</p>
     </div>
   )
 }
