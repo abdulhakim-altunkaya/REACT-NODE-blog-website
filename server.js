@@ -14,18 +14,9 @@ connectDB();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(express.static("frontend/public"));
 
 
-app.use('/static', express.static(path.join(__dirname, './frontend/build')));
-
-app.get('*', function(_, res) {
-  res.sendFile(path.join('/backend/frontend/build/index.html'), function(err) {
-    if (err) {
-      console.log(err);
-      res.status(500).send(err);
-    }
-  });
-});
 /*
 const dir = path.join(__dirname, 'frontend');
 app.use(express.static(dir));
