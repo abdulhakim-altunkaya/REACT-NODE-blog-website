@@ -14,7 +14,8 @@ connectDB();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-app.use(express.static("frontend/public"));
+app.use(express.static(path.join(__dirname,"frontend","public")))
+
 
 
 /*
