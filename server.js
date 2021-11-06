@@ -16,7 +16,9 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use(express.static(path.join(__dirname, './frontend')));
-
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname + "./frontend/public/index.html"))
+})
 /*
 app.use(express.static(path.join(__dirname, './frontend/public')));
 */
