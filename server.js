@@ -15,12 +15,26 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
+
+app.use('/static', express.static(path.join(__dirname, './frontend/public')));
+
+app.get('*', function(_, res) {
+  res.sendFile(path.join('/backend/frontend/public/index.html'), function(err) {
+    if (err) {
+      console.log(err);
+      res.status(500).send(err);
+    }
+  });
+});
+/*
 const dir = path.join(__dirname, 'frontend');
 app.use(express.static(dir));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname + "/frontend/src/index.js"))
+  res.sendFile(path.join(__dirname + "./frontend/src/index.js"))
 })
+*/
+
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
